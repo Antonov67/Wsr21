@@ -44,6 +44,8 @@
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="25dp"
+                android:paddingRight="35dp"
                 android:background="@drawable/button_shape"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -54,7 +56,7 @@
                 android:drawableRight="@drawable/label" />
 
             <LinearLayout
-                android:id="@+id/button3"
+                android:id="@+id/buttonMix"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -64,37 +66,65 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/button_shape"
-                    android:layout_marginTop="20dp">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/icons8_exchange_dollar_128" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Курсы валют"
-                        android:textSize="18sp" />
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/icons8_exchange_dollar_128" />
 
-                    <TextView
-                        android:id="@+id/textDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Курсы валют"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/textDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textUSD"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="25dp"
+                            android:layout_weight="1"
+                            android:text="USD" />
+
+                        <TextView
+                            android:id="@+id/textEUR"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="25dp"
+                            android:text="EUR" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"></LinearLayout>
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
