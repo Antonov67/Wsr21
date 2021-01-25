@@ -23,6 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:paddingLeft="25dp"
                 android:src="@drawable/icons8_museum_100" />
 
             <ImageView
@@ -30,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
+                android:paddingRight="35dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/worldskills_bank" />
         </LinearLayout>
