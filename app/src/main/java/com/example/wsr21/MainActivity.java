@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,12 +17,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.button2);
-        linearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Кнопка46",Toast.LENGTH_LONG).show();
-            }
-        });
+        TextView date = (TextView)findViewById(R.id.textDate);
+        SimpleDateFormat format = new SimpleDateFormat("dd.mm.yyyy");
+        date.setText(format.format(new Date()));
     }
 }
