@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Кнопка2",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Кнопка4546",Toast.LENGTH_LONG).show();
             }
         });
     }
