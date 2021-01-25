@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView date = (TextView)findViewById(R.id.textDate);
-        SimpleDateFormat format = new SimpleDateFormat("dd.mm.yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
         date.setText(format.format(new Date()));
         Button buttonBanki = (Button)findViewById(R.id.button);
         buttonBanki.setOnClickListener(new View.OnClickListener() {
