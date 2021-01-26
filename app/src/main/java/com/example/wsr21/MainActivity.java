@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,25 +64,44 @@ public class MainActivity extends AppCompatActivity {
                 //Настраиваем сообщение в диалоговом окне:
                 mDialogBuilder
                         .setCancelable(false)
-                        .setPositiveButton("OK",
+                        .setPositiveButton("Добавить",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
                                         //Вводим текст и отображаем в строке ввода на основном экране:
-                                        final_text.setText(userInputLogin.getText() + " " + userInputPassword.getText());
-                                        butt_auth.setText(final_text.getText());
+                                        Toast.makeText(getApplicationContext(), "ОК", Toast.LENGTH_LONG).show();
+                                       // final_text.setText(userInputLogin.getText() + " " + userInputPassword.getText());
+
+
                                     }
+
                                 })
                         .setNegativeButton("Отмена",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
-                                        dialog.cancel();
-                                        butt_auth.setText(final_text.getText());
+                                        Toast.makeText(getApplicationContext(), "ОТМЕНА", Toast.LENGTH_LONG).show();
+                                       // dialog.cancel();
+
+
                                     }
                                 });
 
                 //Создаем AlertDialog:
                 AlertDialog alertDialog = mDialogBuilder.create();
+                //меняем цвет кнопок в окне алерта
+                alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                    @Override
+                    public void onShow(DialogInterface dialog) {
+                        Button positiveButton = ((AlertDialog)dialog).getButton(DialogInterface.BUTTON_POSITIVE);
+                        positiveButton.setTextColor(context.getResources().getColor(R.color.button_alert_wind));
+                        positiveButton.setTypeface(Typeface.DEFAULT_BOLD);
+                        positiveButton.invalidate();
 
+                        Button negativeButton = ((AlertDialog)dialog).getButton(DialogInterface.BUTTON_NEGATIVE);
+                        negativeButton.setTextColor(context.getResources().getColor(R.color.button_alert_wind));
+                        negativeButton.setTypeface(Typeface.DEFAULT_BOLD);
+                        negativeButton.invalidate();
+                    }
+                });
                 //и отображаем его:
                 alertDialog.show();
             }

@@ -5,8 +5,8 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:padding="10dp"
-
-    android:theme="@style/Theme.AppCompat.DayNight.Dialog.MinWidth">
+    android:background="#303030"
+    android:theme="@style/CardView.Dark">
 
     <TextView
         android:id="@+id/textView1"
@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Авторизация"
         android:paddingBottom="20dp"
+        android:textColor="#FFFFFF"
 
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -23,6 +24,8 @@
         android:layout_height="wrap_content"
         android:text="Введите Ваш логин и пароль"
         android:paddingBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#FFFFFF"
         />
 
     <EditText
