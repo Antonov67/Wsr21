@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +18,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-
+    final Context context = this;
+    private TextView final_text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final Context context = this;
         TextView date = (TextView)findViewById(R.id.textDate);
         SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
         date.setText(format.format(new Date()));
@@ -58,6 +59,30 @@ public class MainActivity extends AppCompatActivity {
                 //Настраиваем отображение поля для ввода текста в открытом диалоге:
                 final EditText userInputLogin = (EditText) promptsView.findViewById(R.id.login_txt);
                 final EditText userInputPassword = (EditText) promptsView.findViewById(R.id.password_txt);
+                //Настраиваем сообщение в диалоговом окне:
+                mDialogBuilder
+                        .setCancelable(false)
+                        .setPositiveButton("OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        //Вводим текст и отображаем в строке ввода на основном экране:
+                                        final_text.setText(userInputLogin.getText() + " " + userInputPassword.getText());
+                                        butt_auth.setText(final_text.getText());
+                                    }
+                                })
+                        .setNegativeButton("Отмена",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        dialog.cancel();
+                                        butt_auth.setText(final_text.getText());
+                                    }
+                                });
+
+                //Создаем AlertDialog:
+                AlertDialog alertDialog = mDialogBuilder.create();
+
+                //и отображаем его:
+                alertDialog.show();
             }
         });
     }
