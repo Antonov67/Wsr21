@@ -68,9 +68,6 @@ public class MainActivity extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
                                         Toast.makeText(getApplicationContext(), "Добавить", Toast.LENGTH_LONG).show();
-
-
-
                                     }
                                 })
                         .setPositiveButton("Отмена",
@@ -82,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), final_text, Toast.LENGTH_LONG).show();
                                     }
                                 });
-
 
                 //Создаем AlertDialog:
                 AlertDialog alertDialog = mDialogBuilder.create();
