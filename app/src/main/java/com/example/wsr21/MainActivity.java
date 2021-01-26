@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         buttonBanki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"банки",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this,Banks_activity.class);
+                startActivity(intent);
             }
         });
 
@@ -41,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         buttonMix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"курсы валют",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this,Cources_Activity.class);
+                startActivity(intent);
             }
         });
 
