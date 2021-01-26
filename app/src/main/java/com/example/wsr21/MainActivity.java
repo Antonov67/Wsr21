@@ -21,7 +21,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     final Context context = this;
-    private TextView final_text;
+    private String final_text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,26 +64,25 @@ public class MainActivity extends AppCompatActivity {
                 //Настраиваем сообщение в диалоговом окне:
                 mDialogBuilder
                         .setCancelable(false)
-                        .setPositiveButton("Добавить",
+                        .setNegativeButton("Добавить",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
-                                        //Вводим текст и отображаем в строке ввода на основном экране:
-                                        Toast.makeText(getApplicationContext(), "ОК", Toast.LENGTH_LONG).show();
-                                       // final_text.setText(userInputLogin.getText() + " " + userInputPassword.getText());
+                                        Toast.makeText(getApplicationContext(), "Добавить", Toast.LENGTH_LONG).show();
+
 
 
                                     }
-
                                 })
-                        .setNegativeButton("Отмена",
+                        .setPositiveButton("Отмена",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
-                                        Toast.makeText(getApplicationContext(), "ОТМЕНА", Toast.LENGTH_LONG).show();
-                                       // dialog.cancel();
-
-
+                                        dialog.cancel();
+                                        //Вводим текст и отображаем в строке ввода на основном экране:
+                                        final_text=userInputLogin.getText().toString() + " " + userInputPassword.getText().toString();
+                                        Toast.makeText(getApplicationContext(), final_text, Toast.LENGTH_LONG).show();
                                     }
                                 });
+
 
                 //Создаем AlertDialog:
                 AlertDialog alertDialog = mDialogBuilder.create();
