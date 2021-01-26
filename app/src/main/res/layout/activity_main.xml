@@ -55,7 +55,7 @@
 
                 android:drawableLeft="@drawable/icons8_map_pin_100"
 
-                android:drawableRight="@drawable/label21" />
+                android:drawableRight="@drawable/label" />
 
             <LinearLayout
                 android:id="@+id/buttonMix"
