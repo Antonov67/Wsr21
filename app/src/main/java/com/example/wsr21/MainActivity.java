@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,Cources_Activity.class);
                 startActivity(intent);
             }
-        });
+        });//
 
         //создаем всплывающее окно авторизации
         //кнопка авторизации
